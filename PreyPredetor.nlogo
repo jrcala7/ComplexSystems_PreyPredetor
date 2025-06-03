@@ -1,9 +1,131 @@
+;Breed == Different classes
+;Plural Singular
+breed [fishes fish]
+breed [sharks shark]
 
+turtles-own [ energy ]
+
+to setup
+  clear-all
+
+  ;For aquarium effect
+  ask patches[
+    set pcolor blue
+  ]
+
+  ;Create fish-count number of fishes
+  create-fishes fish-count[
+    set shape "fish"
+    set color green ;Friendly fish is green
+    set energy fish-default-energy
+    ;Set a random position on the aquarium
+    setxy random-xcor random-ycor
+  ]
+
+  ;Create shark-count number of sharks
+  create-sharks shark-count[
+    set shape "fish"
+    set size 2 ;Faster tracking
+    set color red ;Sharks are red
+    set energy shark-default-energy
+    ;Set a random position on the aquarium
+    setxy random-xcor random-ycor
+  ]
+
+  ask n-of food-count patches[
+    set pcolor yellow
+  ]
+
+  reset-ticks
+end
+
+to go
+
+  ;Auto stop if no one is left
+  if not any? turtles [ stop ]
+  ;Stop if reached target ticks
+  if ticks >= target-ticks [ stop ]
+
+  ;For every fish
+  ask fishes[
+    move-turtle
+
+    eat-food
+    check-dead
+    check-and-spawn-offspring fish-spawn-chance fish-default-energy
+  ]
+
+  ;For every shark
+  ask sharks[
+    move-turtle
+
+    eat-fish
+    check-dead
+    check-and-spawn-offspring shark-spawn-chance shark-default-energy
+  ]
+
+  check-spawn-food
+
+  tick
+end
+
+to check-spawn-food
+  if random-float 100 < food-spawn-chance[
+    ;Select random food-spawn-count patches
+    ask n-of food-spawn-count patches[
+      set pcolor yellow
+    ]
+  ]
+end
+
+;Eat fish food
+to eat-food
+
+  if pcolor = yellow [
+    set pcolor blue
+    set energy energy + fish-food-recovery
+  ]
+
+end
+
+;Eat other fish
+to eat-fish
+  let prey one-of fishes-here
+  if prey != nobody[
+    ask prey [die]
+    set energy energy + shark-food-recovery
+  ]
+end
+
+;Checks if can spawn and spawns offspring on spot
+to check-and-spawn-offspring [ spawn-chance default-energy ]
+  if random-float 100 < spawn-chance[
+      hatch 1 [
+        set energy default-energy
+    ]
+  ]
+end
+
+;Generic move function
+to move-turtle
+
+  right random-float 360
+  fd 1
+  set energy energy - 1
+
+end
+
+;Generic despawn
+to check-dead
+
+  if energy <= 0 [die]
+
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
+627
 10
-647
+1064
 448
 -1
 -1
@@ -26,6 +148,268 @@ GRAPHICS-WINDOW
 1
 ticks
 30.0
+
+BUTTON
+8
+10
+72
+43
+Setup
+setup
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+SLIDER
+12
+85
+184
+118
+fish-count
+fish-count
+0
+500
+102.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+193
+85
+365
+118
+shark-count
+shark-count
+0
+500
+6.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+11
+130
+183
+163
+fish-spawn-chance
+fish-spawn-chance
+0
+100
+7.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+193
+131
+365
+164
+shark-spawn-chance
+shark-spawn-chance
+0
+100
+7.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+10
+175
+182
+208
+fish-default-energy
+fish-default-energy
+0
+200
+41.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+194
+174
+366
+207
+shark-default-energy
+shark-default-energy
+0
+200
+15.0
+1
+1
+NIL
+HORIZONTAL
+
+BUTTON
+85
+10
+148
+43
+GO!
+go
+T
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+SLIDER
+11
+218
+183
+251
+fish-food-recovery
+fish-food-recovery
+0
+50
+10.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+194
+218
+366
+251
+shark-food-recovery
+shark-food-recovery
+0
+50
+15.0
+1
+1
+NIL
+HORIZONTAL
+
+MONITOR
+49
+268
+129
+313
+NIL
+count fishes
+17
+1
+11
+
+MONITOR
+232
+270
+315
+315
+NIL
+count sharks
+17
+1
+11
+
+PLOT
+12
+330
+367
+480
+Population
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+true
+"" ""
+PENS
+"Fishes" 1.0 0 -11085214 true "" "plot count fishes"
+"Sharks" 1.0 0 -2139308 true "" "plot count sharks"
+
+SLIDER
+381
+85
+553
+118
+food-count
+food-count
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
+
+MONITOR
+427
+270
+506
+315
+Food
+count patches with [ pcolor = yellow ]
+17
+1
+11
+
+SLIDER
+380
+132
+552
+165
+food-spawn-chance
+food-spawn-chance
+0
+100
+30.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+380
+175
+552
+208
+food-spawn-count
+food-spawn-count
+0
+10
+3.0
+1
+1
+NIL
+HORIZONTAL
+
+INPUTBOX
+161
+10
+316
+70
+target-ticks
+50.0
+1
+0
+Number
 
 @#$#@#$#@
 ## WHAT IS IT?
