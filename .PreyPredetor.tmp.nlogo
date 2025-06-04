@@ -220,7 +220,7 @@ fish-spawn-chance
 fish-spawn-chance
 0
 100
-7.0
+50.0
 1
 1
 NIL
@@ -235,7 +235,7 @@ shark-spawn-chance
 shark-spawn-chance
 0
 100
-7.0
+46.0
 1
 1
 NIL
@@ -250,7 +250,7 @@ fish-default-energy
 fish-default-energy
 0
 200
-41.0
+101.0
 1
 1
 NIL
@@ -265,7 +265,7 @@ shark-default-energy
 shark-default-energy
 0
 200
-15.0
+92.0
 1
 1
 NIL
@@ -297,7 +297,7 @@ fish-food-recovery
 fish-food-recovery
 0
 50
-10.0
+24.0
 1
 1
 NIL
@@ -312,7 +312,7 @@ shark-food-recovery
 shark-food-recovery
 0
 50
-15.0
+23.0
 1
 1
 NIL
@@ -409,7 +409,7 @@ food-spawn-count
 food-spawn-count
 0
 10
-3.0
+1.0
 1
 1
 NIL
@@ -773,7 +773,7 @@ NetLogo 6.4.0
 @#$#@#$#@
 @#$#@#$#@
 <experiments>
-  <experiment name="10-run-stats" repetitions="10" runMetricsEveryStep="true">
+  <experiment name="scenario 1" repetitions="10" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <metric>final-shark-count</metric>

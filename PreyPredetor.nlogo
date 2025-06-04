@@ -1,3 +1,8 @@
+globals [
+  final-shark-count
+  final-fish-count
+  final-food-count
+]
 ;Breed == Different classes
 ;Plural Singular
 breed [fishes fish]
@@ -42,23 +47,32 @@ end
 to go
 
   ;Auto stop if no one is left
-  if not any? turtles [ stop ]
+  if not any? turtles [
+    set final-shark-count count sharks
+    set final-fish-count count fishes
+    set final-food-count count patches with [pcolor = yellow]
+    stop
+  ]
+
   ;Stop if reached target ticks
-  if ticks >= target-ticks [ stop ]
+  if ticks >= target-ticks [
+    set final-shark-count count sharks
+    set final-fish-count count fishes
+    set final-food-count count patches with [pcolor = yellow]
+    stop
+  ]
 
   ;For every fish
-  ask fishes[
+  ask fishes [
     move-turtle
-
     eat-food
     check-dead
     check-and-spawn-offspring fish-spawn-chance fish-default-energy
   ]
 
   ;For every shark
-  ask sharks[
+  ask sharks [
     move-turtle
-
     eat-fish
     check-dead
     check-and-spawn-offspring shark-spawn-chance shark-default-energy
@@ -68,6 +82,7 @@ to go
 
   tick
 end
+
 
 to check-spawn-food
   if random-float 100 < food-spawn-chance[
@@ -205,7 +220,7 @@ fish-spawn-chance
 fish-spawn-chance
 0
 100
-7.0
+50.0
 1
 1
 NIL
@@ -220,7 +235,7 @@ shark-spawn-chance
 shark-spawn-chance
 0
 100
-7.0
+46.0
 1
 1
 NIL
@@ -235,7 +250,7 @@ fish-default-energy
 fish-default-energy
 0
 200
-41.0
+101.0
 1
 1
 NIL
@@ -250,7 +265,7 @@ shark-default-energy
 shark-default-energy
 0
 200
-15.0
+92.0
 1
 1
 NIL
@@ -282,7 +297,7 @@ fish-food-recovery
 fish-food-recovery
 0
 50
-10.0
+24.0
 1
 1
 NIL
@@ -297,7 +312,7 @@ shark-food-recovery
 shark-food-recovery
 0
 50
-15.0
+23.0
 1
 1
 NIL
@@ -379,7 +394,7 @@ food-spawn-chance
 food-spawn-chance
 0
 100
-30.0
+50.0
 1
 1
 NIL
@@ -394,7 +409,7 @@ food-spawn-count
 food-spawn-count
 0
 10
-3.0
+5.0
 1
 1
 NIL
@@ -757,6 +772,51 @@ NetLogo 6.4.0
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
+<experiments>
+  <experiment name="scenario 1" repetitions="10" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>final-shark-count</metric>
+    <metric>final-fish-count</metric>
+    <metric>final-food-count</metric>
+    <enumeratedValueSet variable="food-spawn-chance">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-food-recovery">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-food-recovery">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-default-energy">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-spawn-count">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-default-energy">
+      <value value="41"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="target-ticks">
+      <value value="500"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>
 @#$#@#$#@
 @#$#@#$#@
 default
