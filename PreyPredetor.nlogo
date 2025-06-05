@@ -795,7 +795,7 @@ NetLogo 6.4.0
 @#$#@#$#@
 @#$#@#$#@
 <experiments>
-  <experiment name="scenario 1" repetitions="10" runMetricsEveryStep="true">
+  <experiment name="scenario 1 (500 ticks)" repetitions="10" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
     <metric>curr-fish-count</metric>
@@ -839,6 +839,236 @@ NetLogo 6.4.0
     </enumeratedValueSet>
     <enumeratedValueSet variable="indefinite?">
       <value value="&quot;no&quot;"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="scenario 1 (infinite)" repetitions="10" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>curr-fish-count</metric>
+    <metric>curr-shark-count</metric>
+    <metric>curr-food-count</metric>
+    <enumeratedValueSet variable="food-spawn-chance">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-food-recovery">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-food-recovery">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-default-energy">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-spawn-count">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-default-energy">
+      <value value="41"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="target-ticks">
+      <value value="500"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="indefinite?">
+      <value value="&quot;yes&quot;"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="scenario 2 (500 ticks)" repetitions="10" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>curr-fish-count</metric>
+    <metric>curr-shark-count</metric>
+    <metric>curr-food-count</metric>
+    <enumeratedValueSet variable="food-spawn-chance">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-food-recovery">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-food-recovery">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-default-energy">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-spawn-count">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-default-energy">
+      <value value="41"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="target-ticks">
+      <value value="500"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="indefinite?">
+      <value value="&quot;no&quot;"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="scenario 2 (infinite)" repetitions="10" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>curr-fish-count</metric>
+    <metric>curr-shark-count</metric>
+    <metric>curr-food-count</metric>
+    <enumeratedValueSet variable="food-spawn-chance">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-food-recovery">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-food-recovery">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-default-energy">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-spawn-count">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-default-energy">
+      <value value="41"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="target-ticks">
+      <value value="500"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="indefinite?">
+      <value value="&quot;yes&quot;"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="scenario 3 (500 ticks)" repetitions="10" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>curr-fish-count</metric>
+    <metric>curr-shark-count</metric>
+    <metric>curr-food-count</metric>
+    <enumeratedValueSet variable="food-spawn-chance">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-food-recovery">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-food-recovery">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-default-energy">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-spawn-count">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-default-energy">
+      <value value="41"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="target-ticks">
+      <value value="500"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="indefinite?">
+      <value value="&quot;no&quot;"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="scenario 3 (infinite)" repetitions="10" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <metric>curr-fish-count</metric>
+    <metric>curr-shark-count</metric>
+    <metric>curr-food-count</metric>
+    <enumeratedValueSet variable="food-spawn-chance">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-food-recovery">
+      <value value="10"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-spawn-chance">
+      <value value="7"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-food-recovery">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-default-energy">
+      <value value="15"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-spawn-count">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-count">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="food-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fish-default-energy">
+      <value value="41"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="target-ticks">
+      <value value="500"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="shark-count">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="indefinite?">
+      <value value="&quot;yes&quot;"/>
     </enumeratedValueSet>
   </experiment>
 </experiments>
