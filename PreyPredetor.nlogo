@@ -2,6 +2,10 @@ globals [
   final-shark-count
   final-fish-count
   final-food-count
+
+  curr-fish-count
+  curr-shark-count
+  curr-food-count
 ]
 ;Breed == Different classes
 ;Plural Singular
@@ -55,7 +59,7 @@ to go
   ]
 
   ;Stop if reached target ticks
-  if ticks >= target-ticks [
+  if ticks >= target-ticks and indefinite? = "no" [
     set final-shark-count count sharks
     set final-fish-count count fishes
     set final-food-count count patches with [pcolor = yellow]
@@ -80,7 +84,15 @@ to go
 
   check-spawn-food
 
+  update-metrics
+
   tick
+end
+
+to update-metrics
+  set curr-fish-count count fishes
+  set curr-shark-count count sharks
+  set curr-food-count count patches with [pcolor = yellow]
 end
 
 
@@ -220,7 +232,7 @@ fish-spawn-chance
 fish-spawn-chance
 0
 100
-50.0
+7.0
 1
 1
 NIL
@@ -235,7 +247,7 @@ shark-spawn-chance
 shark-spawn-chance
 0
 100
-46.0
+7.0
 1
 1
 NIL
@@ -250,7 +262,7 @@ fish-default-energy
 fish-default-energy
 0
 200
-101.0
+41.0
 1
 1
 NIL
@@ -265,7 +277,7 @@ shark-default-energy
 shark-default-energy
 0
 200
-92.0
+15.0
 1
 1
 NIL
@@ -297,7 +309,7 @@ fish-food-recovery
 fish-food-recovery
 0
 50
-24.0
+15.0
 1
 1
 NIL
@@ -312,7 +324,7 @@ shark-food-recovery
 shark-food-recovery
 0
 50
-23.0
+15.0
 1
 1
 NIL
@@ -321,10 +333,10 @@ HORIZONTAL
 MONITOR
 49
 268
-129
+144
 313
-NIL
-count fishes
+Fishes
+curr-fish-count
 17
 1
 11
@@ -332,10 +344,10 @@ count fishes
 MONITOR
 232
 270
-315
+337
 315
 NIL
-count sharks
+Sharks
 17
 1
 11
@@ -380,7 +392,7 @@ MONITOR
 506
 315
 Food
-count patches with [ pcolor = yellow ]
+curr-food-count
 17
 1
 11
@@ -394,7 +406,7 @@ food-spawn-chance
 food-spawn-chance
 0
 100
-50.0
+30.0
 1
 1
 NIL
@@ -409,7 +421,7 @@ food-spawn-count
 food-spawn-count
 0
 10
-5.0
+3.0
 1
 1
 NIL
@@ -425,6 +437,16 @@ target-ticks
 1
 0
 Number
+
+CHOOSER
+325
+15
+463
+60
+indefinite?
+indefinite?
+"yes" "no"
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -776,9 +798,9 @@ NetLogo 6.4.0
   <experiment name="scenario 1" repetitions="10" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
-    <metric>final-shark-count</metric>
-    <metric>final-fish-count</metric>
-    <metric>final-food-count</metric>
+    <metric>curr-fish-count</metric>
+    <metric>curr-shark-count</metric>
+    <metric>curr-food-count</metric>
     <enumeratedValueSet variable="food-spawn-chance">
       <value value="30"/>
     </enumeratedValueSet>
@@ -814,6 +836,9 @@ NetLogo 6.4.0
     </enumeratedValueSet>
     <enumeratedValueSet variable="shark-count">
       <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="indefinite?">
+      <value value="&quot;no&quot;"/>
     </enumeratedValueSet>
   </experiment>
 </experiments>
