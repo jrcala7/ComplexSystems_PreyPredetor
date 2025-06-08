@@ -96,7 +96,7 @@ Created by CA group 1 Grad/Undergrad,De La Salle University Manila, as part of o
 
 For educational use. No external datasets or libraries were used.
 
-The model's idea was inspired by Wolf Sheep Predation Model and feeding frenzy game, where the user plays as the prey which eats until it can be the predator. 
+The model's idea was inspired by Wolf Sheep Predation Model and feeding frenzy game. 
 
 Created by:
 
