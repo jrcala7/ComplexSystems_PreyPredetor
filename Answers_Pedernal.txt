@@ -1,0 +1,161 @@
+Scenario 1
+
+1 How would you describe the general behavior of the model up to 500 tick?
+
+Around 380 ticks, the fish population begins a steady decline, while the population for the sharks rises which follows the prey/predator ecosystem
+An inverse relationship with fish and food supply, as the food population began to decline, the fish population experienced a brief boom.
+It seems that prey populations (fish) tend to increase at a faster rate than predator populations (sharks). However, due to the positive correlation between the two—where an increase in prey supports predator growth—both populations suffered a sharp decline when the fish population started to fall
+
+
+
+2. Average total population of prey,predator and food after 500 ticks?
+
+Fish	1482.448633
+Shark	949.8203397
+Food	80.74563492
+
+
+3. How would you describe the general behaviour of your model when it runs indefinitely?
+
+The model runs the same except that it never reach 500 ticks
+
+
+4. How does it compare to the average behaviour up to tick 500?
+
+The simulation ends if a variable reaches 0.
+
+The model does not reach 500 ticks.
+
+Compared to previous behavior, the model follows a similar trend.
+
+
+
+5. Times each turtle died out of 10 loops?
+
+
+No. of Times Fish Extinct	9
+No. of Times Shark Extinct	1
+No. of Times Food Extinct	0
+
+
+
+Scenario 2---------------------------------------------------
+
+1 How would you describe the general behavior of the model up to 500 tick?
+
+Fish: Decline from ~48.4 to 2.25.
+
+Relationship with Sharks: Inverse As sharks increase, fish decrease due to predation.
+
+As fish population decreases, the food consumed by fish also decreases 
+Shark has an increase from ~104.7 to ~172.8, then stabilizes and slightly declines to ~144. As fish population decreases, sharks increase due to more available prey.with decline as prey becomes scarce
+As fish consume food, a decrease in fish population leads to a decrease in food consumption, predator in this simulation does eat prey's food
+
+
+
+2. Average total population of prey,predator and food after 500 ticks?
+
+Fish	152.3761944
+Shark	239.5493778
+Food	84.93607222
+
+
+
+
+3. How would you describe the general behaviour of your model when it runs indefinitely?
+
+There's typically an inverse relationship—when prey increases, predators follow, and when predators increase, prey decreases.
+
+Over time, the system may reach a dynamic equilibrium where the populations oscillate around certain mean values.
+
+
+4. How does it compare to the average behaviour up to tick 500?
+
+The inverse relationship between prey/predator and prey/food populations will still hold 
+Cannot reach 500 ticks due to condition
+
+
+5. Times each turtle died out of 10 loops?
+
+No of times Fish Extinct	9
+No of times Shark Extinct	1
+No of times Food Extinct	0
+
+
+
+
+Scenario 3-------------------------------------------------
+
+1 How would you describe the general behavior of the model up to 500 tick?
+
+Fis = Stable growth from start to 80 ticks, until 300 ticks then drastic decrease due to predatory activity 
+Shark = positive relationship with fish's population with a sudden increase on tick 290 that leads to fish's extinction
+Food = Stable growth since start but with the fish population peak food became sarce until fish extinction
+
+
+
+2. Average total population of prey,predator and food after 500 ticks?
+
+Fish	89.81912857
+Shark	226.3249968
+Food	76.4449627
+
+
+3. How would you describe the general behaviour of your model when it runs indefinitely?
+
+The cycle of prey/predator/food is still the same but this time events like population increase for prey/predator happened 20 ticks faster on average
+
+
+
+4. How does it compare to the average behaviour up to tick 500?
+
+Peak population of fish are reached faster by 50 ticks on average
+Peak population of sharks are reach 60 ticks on average and fish are extinct faster than limited run
+
+
+5. Times each turtle died out of 10 loops?
+
+Fish	7
+Shark	2
+Food	0
+	
+
+
+
+Scenario 4---------------------------------------------
+
+1 How would you describe the general behavior of the model up to 500 tick?
+
+Fish: After tick 30, fish population starts to decline steadily, reaching a lower point around sub 200 by tick 500. The decline of fish is influenced by both the shark population and a reduction in available food sources.
+Shark: Shark numbers begin to decline from tick 150 onwards, likely due to diminishing fish and lack of food to support their growth. By tick 500, shark population stabilizes at a much lower number around 4–9 sharks due to reduced food supply and over-predation.
+Food: After tick 100, food starts to plateau and then declines sharply after tick 200, dipping to 50–40 units by tick 500, signaling food exhaustion. The decline in food impact both fish and shark, as fewer food sources limit the ability of both populations to thrive.
+
+
+
+2. Average total population of prey,predator and food after 500 ticks?
+Fish 74.5614
+Shark 14.3216
+Food 136.1412
+
+
+3. How would you describe the general behaviour of your model when it runs indefinitely?
+
+The model runs smoother than the 500 tick model
+The model can run up to 1,300 ticks but at the cost of low population for each variable
+Trends are longer for the prey/predator population specially on some runs where the population has steep curve
+
+
+
+4. How does it compare to the average behaviour up to tick 500?
+
+Gradual changes are seen compared to the 500 tick model
+The predator's population has a slower pace in terms of population but has steady curve
+The Food has smoother changes compared to 500 tick model
+
+
+5. Times each turtle died out of 10 loops?
+
+fish	0
+shark	3
+food	0
+
